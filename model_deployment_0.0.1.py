@@ -5,9 +5,9 @@ def main():
     st.title('Regulatory Relevance of Product Changes - RegHub x Roche - Alpha')
 
     # Creating four text boxes for user input
-    input1 = st.text_input('Enter "Title (English)" in box 1')
-    input2 = st.text_input('Enter "State before Planned Event (English)" in box 2')
-    input3 = st.text_input('Enter "State after Planned Event (English)" in box 3')
+    input1 = st.text_area('Enter "Title (English)" in box 1', height=150)
+    input2 = st.text_area('Enter "State before Planned Event (English)" in box 2', height=300)
+    input3 = st.text_area('Enter "State after Planned Event (English)" in box 3', height=300)
     input4 = st.text_input('Enter "Molecule Type" in box 4')
     input5 = st.selectbox("Select which regulation to check (Canada will be added soon)", ["EU"])
 
@@ -26,6 +26,11 @@ def main():
                     st.write("The entered product change is not relevant with respect to EMA Regulation")
             else:
                 st.write(f"MODEL ERROR: {ema_output[0]} - {ema_output[1]}")
+
+        # Count words and display if too many
+        word_count = len(combined_text.split())
+        if word_count > 350:
+            st.write("Please note that the entered product change includes more than 350 words, which makes the results unstable.")
 
 def ema_classifier(text):
     # Define the URL
