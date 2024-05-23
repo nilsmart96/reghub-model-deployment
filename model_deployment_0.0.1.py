@@ -6,8 +6,8 @@ def main():
 
     # Creating four text boxes for user input
     input1 = st.text_area('Enter "Title (English)" in box 1', height=50)
-    input2 = st.text_area('Enter "State before Planned Event (English)" in box 2', height=150)
-    input3 = st.text_area('Enter "State after Planned Event (English)" in box 3', height=150)
+    input2 = st.text_area('Enter "State before Planned Event (English)" in box 2', height=50)
+    input3 = st.text_area('Enter "State after Planned Event (English)" in box 3', height=50)
     input4 = st.text_input('Enter "Molecule Type" in box 4')
     input5 = st.selectbox("Select which regulation to check (Canada will be added soon)", ["EU"])
 
