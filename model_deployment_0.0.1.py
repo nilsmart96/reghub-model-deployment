@@ -14,7 +14,7 @@ def main():
     # Button to process the input
     if st.button('Run Classification'):
         # Combining all the strings
-        combined_text = input1 + "\n" + input2 + "\n" + input3 + "\n" + input4
+        combined_text = 'Title (English)' + "\n" + input1 + "\n" +'State before Planned Event (English)'+  "\n" + input2+ "\n" + 'State after Planned Event (English)' + "\n" +  input3 + "\n" +"Molecule Type"+ "\n" + input4
 
         # Only EU at the moment
         if input5 == "EU":
